@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import Menubar from './components/menubar/Menubar';
+import Test from './components/test/Test';
+// bootstrap css link
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Allproducts from './components/allProducts/Allproducts';
+import { useState } from 'react';
+
 
 function App() {
+
+  // let count=()=>{
+  //   console.log('i am a count function from app.js')
+  // }
+
+  const [count,setCount]=useState(0)
+
+  let addItem=()=>{
+    setCount(count+1)
+  }
+
+  let deleteItem=()=>{
+    if(count>0){
+      setCount(count-1)
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*<Test count={count}></Test>*/}
+      <Menubar count={count}></Menubar>
+      <h1>Welcome to e-Shop</h1>
+      {/*setCartValue() pass to 'Allproducts' component as props key*/}
+      <Allproducts addItem={addItem} deleteItem={deleteItem}></Allproducts>
     </div>
   );
 }

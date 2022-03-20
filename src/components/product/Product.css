@@ -1,0 +1,20 @@
+
+.img-sizeing{
+    height: 180px;
+    width: 200px;
+}
+.buttonStyle{
+    background-color:rgb(6, 59, 59);
+    color: white;
+    border-radius: 10px;
+}
+.buttonStyle2{
+    background-color: rgb(175, 21, 21);
+    color: white;
+    border-radius: 10px;
+}
+
+.Display-buttons{
+    display: flex;
+    justify-content: center;
+}
